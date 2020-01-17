@@ -1,0 +1,21 @@
+<h1><%= @guest.name%>'s Profile</h1>
+
+<h2><%= @guest.occupation%></h2>
+
+<h3> Episodes Starred In:</h3>
+
+<h4><% @guest.episodes.each do |episode|%>
+        <%=link_to episode.date, episode_path(episode.id)%>
+    <%end%>
+
+    
+
+
+    
+</h4>    
+
+
+
+
+
+
