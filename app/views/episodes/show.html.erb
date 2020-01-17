@@ -1,0 +1,6 @@
+<%=@episode.date%>
+<%=@guest.occupation%>
+<%episode.guests do |guest|%>
+    <%=guest.name%>
+    <%= link_to guest.name, guest_path(guest)%>
+    <%end%>

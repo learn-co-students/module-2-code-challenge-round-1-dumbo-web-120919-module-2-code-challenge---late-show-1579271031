@@ -1,0 +1,10 @@
+<%=@guest.name%>
+<%=@guest.occupation%>
+
+<%@guest.episodes do |episode|%>
+    <%=episode.date%>
+    <%=episode.rate%>
+    <%=link_to episode_path(episode)%>
+    <%end%>
+
+

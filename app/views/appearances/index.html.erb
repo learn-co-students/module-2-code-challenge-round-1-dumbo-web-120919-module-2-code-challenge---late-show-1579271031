@@ -1,0 +1,8 @@
+<h1>All The Appearances</h1>
+
+<ul>
+  <% @appearances.each do |appearance| %>
+    <li><%= apperance.guest.name %></li>
+    <%= link_to appearance.guest.name, apperance_path(appearance) %>
+  <% end %>
+</ul>
