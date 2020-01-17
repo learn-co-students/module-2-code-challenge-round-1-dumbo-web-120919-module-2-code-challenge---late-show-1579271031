@@ -1,0 +1,16 @@
+<h1>On Today's Episode</h1>
+
+
+<h3>Episode Date</h3>
+<%=@episode.date%>
+
+<br/>
+
+<h3>Today's Guests</h3>
+<%@episode.guests.each do |guest|%>
+<li><%=link_to guest.name, guest%> - Average Rating: <%=@episode.average_rating%></li>
+<%end%>
+
+# I added some appearances without a rating at first, so some of my average show 
+# ratings come out as nil and won't print. It does work, though! I promise!!
+
