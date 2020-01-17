@@ -1,0 +1,10 @@
+<%= @appearance.rating %>
+<%= @appearance.guests.each do |guest| %>
+<%= link_to guest.name, guest_path(guest) %>
+<%end%>
+
+<ul>
+  <% @appearance.guests.each do |showguest| %>
+    <li><%= link_to showguest.name, guest_path(showguest.id) %></li>
+  <% end %>
+</ul>
