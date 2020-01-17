@@ -4,8 +4,10 @@
 <p>Occupation: <%= @guest.occupation %></p>
 <p>Episodes: </p>
 <ul>
-    <li><%= @guest.episodes.each do |episode| %></li>
-    <%= link_to episode.date, episode_path(episode) %>
-    <%= episode.appearance.rating %>
+    <% @guest.episodes.each do |episode| %>
+    <li>Date: <%= link_to episode.date, episode_path(episode) %></li>
+        <% episode.appearances.each do |appearance| %>
+        <li>Rating: <%= appearance.rating %></li><br>
+        <% end %>
     <% end %>
 </ul>

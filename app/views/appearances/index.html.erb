@@ -2,8 +2,8 @@
 
 <ul>
   <% @appearances.each do |appearance| %>
-    <li>Episode:<%= (appearance.episode) %></li>
-    <li>Guest:<%= (appearance.guest) %></li>
-    <li>Rating:<%= (appearance.rating) %></li>
+    <li>Episode: <%= (appearance.episode.number) %></li>
+    <li>Guest: <%= (appearance.guest.name) %></li>
+    <li>Rating: <%= (appearance.rating) %></li><br>
   <% end %>
 </ul>

@@ -1,8 +1,9 @@
-<h2>Appearance Form </h2>
+
 
 <% if flash[:errors] %>
     <% flash[:errors].each do |message| %>
-    <p><% message %></p>
+    <p><%= message %></p>
+    <% end %>
 <% end %>
 
 <%= render 'form' %>

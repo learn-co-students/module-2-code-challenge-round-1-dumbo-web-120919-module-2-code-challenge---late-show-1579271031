@@ -10,7 +10,7 @@ class AppearancesController < ApplicationController
   
     def new
         @appearance = Appearance.new
-        
+
         @episodes = Episode.all
         @guests = Guest.all
     end
@@ -19,7 +19,7 @@ class AppearancesController < ApplicationController
         @appearance = Appearance.create(appearance_params)
 
         if @appearance.valid?
-            redirect_to appearance_path(@appearance)
+            redirect_to episode_path(@appearance.episode_id)
         else
             flash[:errors] = @appearance.errors.full_messages
             redirect_to new_appearance_path 

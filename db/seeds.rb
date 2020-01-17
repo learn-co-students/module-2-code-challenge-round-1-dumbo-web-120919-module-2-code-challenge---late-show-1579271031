@@ -29,8 +29,11 @@ end
 #   Appearance.create(rating:(rand(5)), guest_id:(rand(10)) , episode_id:(rand(10)) )
 # end
 
-Appearance.create(rating: 5, guest_id: 10, episode_id: 10)
-Appearance.create(rating: 4, guest_id: 8, episode_id: 2)
-Appearance.create(rating: 3, guest_id: 7, episode_id: 3)
-Appearance.create(rating: 1, guest_id: 4, episode_id: 5)
+Appearance.create(rating: 5, guest_id: Guest.all.sample.id, episode_id: Episode.all.sample.id)
+Appearance.create(rating: 4, guest_id: Guest.all.sample.id, episode_id: Episode.all.sample.id)
+Appearance.create(rating: 3, guest_id: Guest.all.sample.id, episode_id: Episode.all.sample.id)
+Appearance.create(rating: 1, guest_id: Guest.all.sample.id, episode_id: Episode.all.sample.id)
+Appearance.create(rating: 4, guest_id: Guest.all.sample.id, episode_id: Episode.all.sample.id)
+Appearance.create(rating: 5, guest_id: Guest.all.sample.id, episode_id: Episode.all.sample.id)
+Appearance.create(rating: 2, guest_id: Guest.all.sample.id, episode_id: Episode.all.sample.id)
 # won't let me create appearance instances!! 
