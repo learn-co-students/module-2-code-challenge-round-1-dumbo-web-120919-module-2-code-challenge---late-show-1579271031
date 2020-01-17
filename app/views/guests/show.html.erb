@@ -1,0 +1,20 @@
+<h1>Guest Show Page</h1>
+
+<h3>Name: <%= @guest.name %> </h3>
+<h3>Occupation: <%= @guest.occupation %> </h3>
+<h3>List of the Episodes <%= @guest.name %> has appeared on: </h3>
+
+<ul>
+    <% @guest.episodes.each do |ep| %>
+        <li> <%= link_to "Episode #{ep.number} - #{ep.date.strftime("%B %d, %Y")}", episode_path(ep) %> </li>
+        <p> Rating:
+
+        <% ep.appearances.each do |app| %>
+            <% if app.guest_id == @guest.id %>
+                <%= app.rating %> </p>
+            <% end %>
+        <% end %>
+
+    <% end %>
+
+</ul>
