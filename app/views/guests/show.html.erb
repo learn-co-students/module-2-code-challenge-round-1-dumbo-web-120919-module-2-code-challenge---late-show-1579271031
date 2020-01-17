@@ -1,0 +1,14 @@
+<h1><%=@guest.name%></h1>
+<h4><%=@guest.occupation%></h4>
+<h3>Appearances: </h3>
+<ul>
+    <%@guest.sorted_eps.each do |episode|%>
+        <li>
+            Episode: <%=episode.number%>
+            <ul>
+                <li>Date: <%=link_to episode.date, episode_path(episode)%></li>
+                <li>Rating: <%=episode.guest_rating(@guest)%></li>
+            </ul>
+        </li>
+    <%end%>
+</ul>
