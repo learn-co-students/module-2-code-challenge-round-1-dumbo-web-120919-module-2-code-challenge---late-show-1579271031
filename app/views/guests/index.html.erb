@@ -1,7 +1,8 @@
 <h1>All The Guests</h1>
 
+<%# Display guest information witha link to each given guest.%>
 <ul>
   <% @guests.each do |guest| %>
-    <li><%= guest.name %></li>
+    <li><%= link_to(guest.name, guest_path(guest.id))%></li>
   <% end %>
 </ul>
