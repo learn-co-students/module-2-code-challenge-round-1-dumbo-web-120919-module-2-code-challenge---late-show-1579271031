@@ -25,3 +25,12 @@ date = Date.parse('2015-09-08')
   date = date.next
 end
 
+# 15.times do |i|
+#   Appearance.create(rating:(rand(5)), guest_id:(rand(10)) , episode_id:(rand(10)) )
+# end
+
+Appearance.create(rating: 5, guest_id: 10, episode_id: 10)
+Appearance.create(rating: 4, guest_id: 8, episode_id: 2)
+Appearance.create(rating: 3, guest_id: 7, episode_id: 3)
+Appearance.create(rating: 1, guest_id: 4, episode_id: 5)
+# won't let me create appearance instances!! 

@@ -1,0 +1,14 @@
+<h2>Appearance Form </h2>
+
+<%= form_for @appearance do |f|%>
+    <%= f.label :episode_id %>
+    <%= f.collection_select(:episode_id, @episodes, :id, :episode_id) %>
+
+    <%= f.label :guest_id %>
+    <%= f.collection_select(:guest_id, @guests, :id, :guest_id) %>
+
+    <%= f.label :rating %>
+    <%= f.text_field :rating %>
+
+    <%= f.submit %>
+<% end %>

@@ -1,0 +1,11 @@
+<h1>About this guest...</h1>
+
+<p>Name: <%= @guest.name %></p>
+<p>Occupation: <%= @guest.occupation %></p>
+<p>Episodes: </p>
+<ul>
+    <li><%= @guest.episodes.each do |episode| %></li>
+    <%= link_to episode.date, episode_path(episode) %>
+    <%= episode.appearance.rating %>
+    <% end %>
+</ul>
