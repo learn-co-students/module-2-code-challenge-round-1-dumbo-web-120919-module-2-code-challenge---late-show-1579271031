@@ -1,0 +1,22 @@
+<h1> Show Page </h1>
+
+<%= @episode.date %> <br>
+<%= @episode.number %>
+
+<h2> Guests Appearance </h2>
+<% @appearance.guests.each do |guest| %>
+<li> <%= guest.episode %> </li>
+<%= link_to "#{@appearance.guest}", guest_path %>
+<% end %>
+
+
+
+ <%# create_table "episodes", force: :cascade do |t|
+    t.date "date"
+    t.integer "number"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false %>
+
+    <%# Episode date
+A list of the guests who were on that episode
+Each guest's name should link to the Guest Show page %>

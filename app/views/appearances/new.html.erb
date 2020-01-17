@@ -1,0 +1,36 @@
+<%= if flash[:errors] %>
+    <% flash[:errors].each do |message| %>
+    <%= message %>
+    <% end %>
+<% end %>
+
+<h1> Create Appearance </h1>
+
+<%= form_for @appearance do |f| %>
+
+<%= f.label :guest_id %>
+<%= f.collection_select :guest_id, @guests, :id, :name %>
+
+<%= f.label :episode_id %>
+<%= f.collection_select :episode_id, @episodes, :id, :number %>
+
+<%= f.label "Rating: " %>
+<%= f.number_field :rating %>
+<%= f.submit "Thank You "%>
+<% end %>
+
+
+
+
+  <%# create_table "appearances", force: :cascade do |t|
+    t.integer "guest_id"
+    t.integer "episode_id"
+    t.integer "rating"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end %>
+<%# 
+  <%= f.label :destination_id %>
+<%# <%= f.collection_select :destination_id, @destinations, :id, :name %>
+<%# <%= f.label :blogger_id %> 
+<%# <%= f.collection_select :blogger_id, @bloggers, :id, :name %> 
