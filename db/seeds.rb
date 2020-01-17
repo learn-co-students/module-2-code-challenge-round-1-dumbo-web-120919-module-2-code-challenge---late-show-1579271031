@@ -7,6 +7,8 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 Guest.destroy_all
+Episode.destroy_all
+Appearance.destroy_all
 
 require 'csv'
 
@@ -24,4 +26,9 @@ date = Date.parse('2015-09-08')
   Episode.create(date: date, number: num)
   date = date.next
 end
+
+(1..30).each do |num|
+  Appearance.create(episode_id: Episode.all.sample.id, guest_id: Guest.all.sample.id, rating: rand(1..5))
+end
+
 
