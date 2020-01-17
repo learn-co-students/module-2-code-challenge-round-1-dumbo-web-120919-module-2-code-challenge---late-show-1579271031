@@ -6,13 +6,19 @@
 
 <h4><% @guest.episodes.each do |episode|%>
         <%=link_to episode.date, episode_path(episode.id)%>
+        <% episode.appearances.each do |appearance|%>
+            <h4> Rating: <%= appearance.rating%> </h4>
+            <%= button_to "Delete Appearance", appearance_path(appearance), :method => :delete%>
+            <hr> 
+        <%end%>
     <%end%>
 
-    
+</h4>
+
+<span><%= button_to "Add an Appearance", new_appearance_path, :method => :get %></span>
 
 
-    
-</h4>    
+ 
 
 
 

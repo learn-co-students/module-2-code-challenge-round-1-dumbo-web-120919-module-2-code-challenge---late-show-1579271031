@@ -1,4 +1,8 @@
 class AppearancesController < ActionController::Base
+    def index
+        @appearances = Appearance.all
+      end
+    
     def new
         @appearance = Appearance.new
         @guests = Guest.all
@@ -14,6 +18,12 @@ class AppearancesController < ActionController::Base
             flash[:errors] = @appearance.errors.full_messages
             redirect_to new_appearance_path
         end
+    end
+
+    def destroy
+        @appearance = Appearance.find(params[:id])
+        @appearance.destroy
+        redirect_to guest_path(@appearance.guest_id)
     end
 
     private

@@ -1,17 +1,22 @@
 <h1>New Appearance</h1>
 
-<h2><%= form_for @appearance do |f|%></h2>
+<h2><%= form_for @appearance do |f|%>
         <%= f.label "Guest"%>
         <%= f.collection_select :guest_id, @guests, :id, :name %>
 
         <%= f.label "Episode"%>
-        <%= f.collection_select :episode_id, @episodes, :id, :date %>
+        <%= f.collection_select :episode_id, @episodes, :id, :number %>
 
         <%= f.label :rating%>
         <%= f.number_field :rating%>
 
         <%=f.submit%>
     <%end%>
+</h2>    
 
 
-<p><%= @appearance.errors.full_messages.first if @appearance.errors.any? %></p>
+<%if flash[:errors]%>
+    <% flash[:errors].each do |message|%>
+		<%=message%>
+	<%end%>
+<%end%>
