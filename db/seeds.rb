@@ -10,6 +10,8 @@ Guest.destroy_all
 
 require 'csv'
 
+puts "Seeding........"
+
 csv_text = File.read(Rails.root.join('lib', 'seeds', 'daily_show_guests.csv'))
 csv = CSV.parse(csv_text, :headers => true, :encoding => 'ISO-8859-1')
 csv.first(100).each do |row|

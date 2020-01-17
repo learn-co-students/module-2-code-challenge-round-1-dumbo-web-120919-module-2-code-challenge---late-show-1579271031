@@ -1,0 +1,12 @@
+<h1>Guest Show Page!</h1>
+
+<%# Display guest information.%>
+<h3>Name: <%= @guest.name %></h3>
+<h4>Occupation: <%= @guest.occupation %></h4>
+<hr>
+<%# Iterate through list of episodes and display information, with a link to each given episode.%>
+<h4>Episodes Appeared On: <% @sorted_episodes.each do |episode| %></h4>
+    <li><%= link_to(episode.date, episode_path(episode.id)) %></li>
+    <li>Rating: <%= episode.rating_for_appearance(@guest) %></li>
+    <p>*******</p>
+<%end%>
